@@ -3,123 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【究極・詳細版】化学 暗記トレーニング</title>
+    <title>【0125/暗記用】化学 穴埋めマスター</title>
     <style>
-        :root { --primary: #2c3e50; --accent: #e74c3c; --bg: #f4f7f9; }
-        body { font-family: "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: var(--bg); }
-        h1 { text-align: center; color: var(--primary); border-bottom: 5px solid var(--primary); padding-bottom: 10px; font-size: 1.5em; }
-        .section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        h2 { background: var(--primary); color: white; padding: 5px 15px; border-radius: 5px; font-size: 1.1em; margin-top: 0; }
-        h3 { border-bottom: 2px solid #ddd; color: #444; font-size: 1em; margin-top: 15px; }
-        .blank { display: inline-block; min-width: 40px; padding: 0 4px; border-bottom: 2px solid var(--accent); cursor: pointer; color: transparent; background-color: #fff0f0; transition: all 0.2s; font-weight: bold; border-radius: 2px; }
-        .blank.show { color: var(--accent); background-color: transparent; border-bottom: 2px solid #ccc; }
-        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.85em; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-        th { background: #eee; }
-        .formula { color: #2980b9; font-weight: bold; }
-        .footer-spacer { height: 80px; }
-        .btn-all { position: fixed; bottom: 20px; right: 20px; padding: 15px 25px; background: var(--accent); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 100; }
+        :root { --primary: #2c3e50; --accent: #e74c3c; --bg: #f0f2f5; --check: #27ae60; }
+        body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; background-color: var(--bg); padding-bottom: 120px; }
+        h1 { text-align: center; color: var(--primary); border-bottom: 4px solid var(--primary); }
+        .section { background: white; padding: 25px; margin-bottom: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative; }
+        h2 { border-left: 6px solid var(--primary); padding-left: 15px; color: var(--primary); background: #eaedf0; padding-top: 5px; padding-bottom: 5px; }
+        
+        /* 穴埋めスタイル */
+        .blank { display: inline-block; min-width: 50px; padding: 0 5px; margin: 0 2px; border-bottom: 2px solid var(--accent); cursor: pointer; color: transparent; background-color: #fff5f5; transition: all 0.2s; font-weight: bold; border-radius: 3px; }
+        .blank.show { color: var(--accent); background-color: transparent; border-bottom: 2px solid #ddd; }
+        
+        /* 苦手保存スタイル */
+        .q-wrapper { display: block; margin-bottom: 15px; padding: 10px; border-radius: 8px; transition: 0.3s; border: 1px solid transparent; }
+        .q-wrapper.wrong { background-color: #fff0f0; border-color: var(--accent); }
+        .save-btn { font-size: 0.8em; cursor: pointer; margin-left: 10px; color: #ccc; border: 1px solid #ccc; padding: 2px 5px; border-radius: 4px; vertical-align: middle; }
+        .q-wrapper.wrong .save-btn { color: white; background-color: var(--accent); border-color: var(--accent); }
+
+        /* ナビゲーション */
+        .controls { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 15px; display: flex; justify-content: center; gap: 10px; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); z-index: 1000; flex-wrap: wrap; }
+        .btn { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white; transition: 0.3s; }
+        .btn-blue { background: var(--primary); }
+        .btn-red { background: var(--accent); }
+        .btn-green { background: var(--check); }
+        
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; font-size: 0.9em; }
+        .hidden-section { display: none !important; }
     </style>
 </head>
 <body>
 
-<h1>無機化学：非金属元素 徹底暗記シート</h1>
+<h1>化学 穴埋め徹底演習 (学習記録付)</h1>
 
-<div class="section">
-    <h2>1節：水素とその化合物</h2>
-    <p>水素 <span class="formula">H₂</span>：<span class="blank">無色</span>・<span class="blank">無臭</span>の気体。すべての気体の中で最も<span class="blank">軽い</span>。金属（<span class="blank">亜鉛</span>など）に<span class="blank">薄い酸</span>を加えてつくる。高温では<span class="blank">酸化物</span>から<span class="blank">酸素</span>を奪う（<span class="blank">還元</span>作用）。</p>
-    <p>水素化合物：15族〜17族の元素とは<span class="blank">共有結合</span>で分子をつくる。</p>
+<div class="section" data-id="s1">
+    <h2>1. 水素・貴ガス</h2>
+    <div class="q-wrapper" data-qid="q1_1">
+        水素は全気体中で最も<span class="blank">軽い</span>。金属に<span class="blank">薄い酸</span>を加えて作り、高温では酸化物から酸素を奪う<span class="blank">還元</span>作用を示す。<span class="save-btn">💾 苦手保存</span>
+    </div>
+    <div class="q-wrapper" data-qid="q1_2">
+        貴ガスは周期表の<span class="blank">18</span>族。価電子は<span class="blank">0</span>で、化学的に非常に安定している。<span class="save-btn">💾 苦手保存</span>
+    </div>
 </div>
 
-<div class="section">
-    <h2>2節：貴ガス</h2>
-    <p><span class="blank">18</span>族元素。価電子は<span class="blank">0</span>。非常に安定しており、他とほとんど<span class="blank">化合物</span>をつくらない。</p>
+<div class="section" data-id="s3">
+    <h2>2. 酸素・酸化物</h2>
+    <div class="q-wrapper" data-qid="q3_1">
+        オゾンは酸素の<span class="blank">同素体</span>で<span class="blank">淡青色</span>。湿らせた<span class="blank">ヨウ化カリウムデンプン紙</span>を<span class="blank">青紫色</span>に変える。<span class="save-btn">💾 苦手保存</span>
+    </div>
+    <div class="q-wrapper" data-qid="q3_2">
+        <span class="blank">両性</span>酸化物は、酸とも<span class="blank">強塩基</span>とも反応する。例：Al₂O₃, ZnO。<span class="save-btn">💾 苦手保存</span>
+    </div>
 </div>
 
-<div class="section">
-    <h2>3節：酸素とその化合物</h2>
-    <h3>酸素・オゾン</h3>
-    <p>酸素 <span class="formula">O₂</span>：<span class="blank">酸化マンガン(IV)</span>（<span class="formula">MnO₂</span>）を<span class="blank">触媒</span>として<span class="blank">過酸化水素</span>（<span class="formula">H₂O₂</span>）を分解すると発生。</p>
-    <p>オゾン <span class="formula">O₃</span>：酸素の<span class="blank">同素体</span>。<span class="blank">淡青色</span>・<span class="blank">特異臭</span>のある<span class="blank">有毒</span>な気体。強い<span class="blank">酸化作用</span>をもつ。水で湿らせた<span class="blank">ヨウ化カリウムデンプン紙</span>を<span class="blank">青紫色</span>に変える。</p>
-    <h3>酸化物の分類</h3>
-    <ul>
-        <li><span class="blank">酸性</span>酸化物：非金属の酸化物。水と反応して<span class="blank">酸</span>、塩基と反応して<span class="blank">塩</span>を生じる。</li>
-        <li><span class="blank">塩基性</span>酸化物：金属の酸化物。水と反応して<span class="blank">塩基</span>、酸と反応して<span class="blank">塩</span>を生じる。</li>
-        <li><span class="blank">両性</span>酸化物：金属の酸化物。水に不溶。酸とも<span class="blank">強塩基</span>とも反応して<span class="blank">塩</span>を生じる。</li>
-    </ul>
+<div class="section" data-id="s4">
+    <h2>3. ハロゲン</h2>
+    <div class="q-wrapper" data-qid="q4_1">
+        酸化力：<span class="blank">F₂</span> ＞ <span class="blank">Cl₂</span> ＞ <span class="blank">Br₂</span> ＞ <span class="blank">I₂</span>。フッ化水素のみが<span class="blank">弱酸</span>である。<span class="save-btn">💾 苦手保存</span>
+    </div>
+    <div class="q-wrapper" data-qid="q4_2">
+        塩素は水に溶けると<span class="blank">塩化水素</span>と<span class="blank">次亜塩素酸</span>を生じる。ヨウ素は<span class="blank">昇華</span>性をもつ。<span class="save-btn">💾 苦手保存</span>
+    </div>
 </div>
 
-<div class="section">
-    <h2>4節：ハロゲンとその化合物</h2>
-    <h3>単体の比較</h3>
-    <p>いずれも<span class="blank">二原子</span>分子。酸化力は <span class="blank">F₂</span> ＞ <span class="blank">Cl₂</span> ＞ <span class="blank">Br₂</span> ＞ <span class="blank">I₂</span>。</p>
-    <ul>
-        <li>塩素 <span class="formula">Cl₂</span>：<span class="blank">刺激臭</span>・<span class="blank">黄緑色</span>。水に溶けると<span class="blank">塩化水素</span>と<span class="blank">次亜塩素酸</span>を生じる。</li>
-        <li>臭素 <span class="formula">Br₂</span>：常温で<span class="blank">赤褐色</span>の<span class="blank">液体</span>。<span class="blank">有毒</span>な蒸気を出す。</li>
-        <li>ヨウ素 <span class="formula">I₂</span>：常温で<span class="blank">黒紫色</span>の固体。<span class="blank">昇華</span>性あり。<span class="blank">ヨウ化カリウム</span>水溶液に溶けて<span class="blank">褐色</span>の「ヨウ素ヨウ化カリウム水溶液」になる。</li>
-    </ul>
-    <h3>ハロゲン化水素（<span class="formula">HX</span>）</h3>
-    <table>
-        <tr><th>化合物名</th><th>化学式</th><th>沸点(℃)</th><th>水溶液名</th><th>酸の強さ</th></tr>
-        <tr><td>フッ化水素</td><td><span class="formula">HF</span></td><td><span class="blank">20</span></td><td><span class="blank">フッ化水素酸</span></td><td><span class="blank">弱酸</span></td></tr>
-        <tr><td>塩化水素</td><td><span class="formula">HCl</span></td><td><span class="blank">-85</span></td><td><span class="blank">塩酸</span></td><td><span class="blank">強酸</span></td></tr>
-        <tr><td>臭化水素</td><td><span class="formula">HBr</span></td><td><span class="blank">-67</span></td><td><span class="blank">臭化水素酸</span></td><td><span class="blank">強酸</span></td></tr>
-        <tr><td>ヨウ化水素</td><td><span class="formula">HI</span></td><td><span class="blank">-35</span></td><td><span class="blank">ヨウ化水素酸</span></td><td><span class="blank">強酸</span></td></tr>
-    </table>
-    <p>酸の強さ：<span class="blank">HI</span> ＞ <span class="blank">HBr</span> ＞ <span class="blank">HCl</span> ≫ <span class="blank">HF</span></p>
-    <p>塩化水素の製法：<span class="blank">塩化ナトリウム</span>に<span class="blank">濃硫酸</span>を加えて<span class="blank">加熱</span>。捕集法は<span class="blank">下方</span>置換。</p>
+<div class="section" data-id="s56">
+    <h2>4. 硫黄・窒素</h2>
+    <div class="q-wrapper" data-qid="q5_1">
+        硫化水素は<span class="blank">腐卵臭</span>。濃硫酸には<span class="blank">不揮発性</span>、<span class="blank">吸湿性</span>、<span class="blank">脱水作用</span>がある。<span class="save-btn">💾 苦手保存</span>
+    </div>
+    <div class="q-wrapper" data-qid="q6_1">
+        アンモニアの製法は<span class="blank">ハーバー・ボッシュ</span>法。捕集は<span class="blank">上方</span>置換。<span class="save-btn">💾 苦手保存</span>
+    </div>
+    <div class="q-wrapper" data-qid="q6_2">
+        NOは<span class="blank">無色</span>で<span class="blank">水上</span>置換。NO₂は<span class="blank">赤褐色</span>で<span class="blank">下方</span>置換。硝酸は<span class="blank">オストワルト</span>法。<span class="save-btn">💾 苦手保存</span>
+    </div>
 </div>
 
-<div class="section">
-    <h2>5節：硫黄とその化合物</h2>
-    <p>同素体：<span class="blank">斜方硫黄</span>、<span class="blank">単斜硫黄</span>、<span class="blank">ゴム状硫黄</span>。</p>
-    <ul>
-        <li>硫化水素 <span class="formula">H₂S</span>：<span class="blank">硫化鉄(II)</span>（<span class="formula">FeS</span>）に<span class="blank">希硫酸</span>または<span class="blank">希塩酸</span>。色は<span class="blank">無色</span>、臭いは<span class="blank">腐卵臭</span>。</li>
-        <li>二酸化硫黄 <span class="formula">SO₂</span>：硫黄の燃焼。色は<span class="blank">無色</span>、臭いは<span class="blank">刺激臭</span>。水に溶けると<span class="blank">亜硫酸</span>（<span class="formula">H₂SO₃</span>）となり<span class="blank">弱酸性</span>。</li>
-        <li>硫酸 <span class="formula">H₂SO₄</span>：工業的製法は<span class="blank">接触法</span>。濃硫酸は<span class="blank">不揮発性</span>、<span class="blank">吸湿性</span>、<span class="blank">脱水作用</span>あり。加熱した<span class="blank">熱濃硫酸</span>は強い酸化作用をもつ。</li>
-    </ul>
+<div class="section" data-id="s7">
+    <h2>5. 炭素・ケイ素</h2>
+    <div class="q-wrapper" data-qid="q7_1">
+        一酸化炭素は<span class="blank">猛毒</span>で水に不溶。二酸化炭素は<span class="blank">石灰石</span>に<span class="blank">希塩酸</span>を加えて作る。<span class="save-btn">💾 苦手保存</span>
+    </div>
+    <div class="q-wrapper" data-qid="q7_2">
+        二酸化ケイ素は<span class="blank">共有結合</span>の結晶で<span class="blank">立体網目</span>構造。ケイ酸ナトリウム溶液は<span class="blank">水ガラス</span>。<span class="save-btn">💾 苦手保存</span>
+    </div>
 </div>
 
-<div class="section">
-    <h2>6節：窒素・リンとその化合物</h2>
-    <h3>窒素の化合物</h3>
-    <p>窒素 <span class="formula">N₂</span>：常温で安定。空気の体積の約<span class="blank">78</span>％。液体窒素は<span class="blank">冷却剤</span>。</p>
-    <p>アンモニア <span class="formula">NH₃</span>：<span class="blank">塩化アンモニウム</span>と<span class="blank">水酸化カルシウム</span>の混合物を<span class="blank">加熱</span>。<span class="blank">上方</span>置換で捕集。工業的には<span class="blank">ハーバー・ボッシュ法</span>。</p>
-    <table>
-        <tr><th>式</th><th>色</th><th>水への溶解性</th><th>捕集法</th><th>製法(反応物)</th><th>性質</th></tr>
-        <tr><td><span class="formula">NO</span></td><td><span class="blank">無色</span></td><td><span class="blank">溶けにくい</span></td><td><span class="blank">水上</span>置換</td><td><span class="blank">Cu</span>と<span class="blank">希HNO₃</span></td><td>空気中で<span class="blank">NO₂</span>になる</td></tr>
-        <tr><td><span class="formula">NO₂</span></td><td><span class="blank">赤褐色</span></td><td><span class="blank">溶けやすい</span></td><td><span class="blank">下方</span>置換</td><td><span class="blank">Cu</span>と<span class="blank">濃HNO₃</span></td><td>水に溶けて<span class="blank">HNO₃</span>になる</td></tr>
-    </table>
-    <p>硝酸 <span class="formula">HNO₃</span>：工業的には<span class="blank">オストワルト法</span>。原料は<span class="blank">アンモニア</span>。</p>
-    <h3>リン</h3>
-    <p>同素体：<span class="blank">黄リン</span>・<span class="blank">赤リン</span>。化合物：<span class="blank">十酸化四リン</span>（<span class="formula">P₄O₁₀</span>）、<span class="blank">リン酸</span>（<span class="formula">H₃PO₄</span>）。</p>
+<div class="controls">
+    <button class="btn btn-blue" onclick="toggleAll()">解答を表示/隠す</button>
+    <button class="btn btn-red" onclick="filterWrong()">苦手のみ表示</button>
+    <button class="btn btn-green" onclick="showAll()">すべて表示</button>
+    <button class="btn" style="background:#95a5a6" onclick="resetData()">記録リセット</button>
 </div>
-
-<div class="section">
-    <h2>7節：炭素・ケイ素とその化合物</h2>
-    <h3>炭素</h3>
-    <table>
-        <tr><th>式</th><th>水への溶解性</th><th>捕集法</th><th>燃焼性</th><th>毒性</th><th>石灰水</th></tr>
-        <tr><td><span class="formula">CO</span></td><td><span class="blank">不溶</span></td><td><span class="blank">水上</span></td><td><span class="blank">可燃性</span></td><td><span class="blank">猛毒</span></td><td><span class="blank">なし</span></td></tr>
-        <tr><td><span class="formula">CO₂</span></td><td><span class="blank">少し溶ける</span></td><td><span class="blank">下方</span></td><td><span class="blank">不燃性</span></td><td><span class="blank">少ない</span></td><td><span class="blank">白濁</span></td></tr>
-    </table>
-    <p>二酸化炭素の実験室製法：<span class="blank">石灰石</span>に<span class="blank">希塩酸</span>を反応させる。</p>
-    <h3>ケイ素</h3>
-    <p>二酸化ケイ素 <span class="formula">SiO₂</span>：<span class="formula">SiO₄</span>の<span class="blank">四面体</span>構造が繰り返された<span class="blank">立体網目構造</span>。<span class="blank">共有結合</span>の結晶。</p>
-    <p>ケイ酸ナトリウム <span class="formula">Na₂SiO₃</span>：<span class="formula">SiO₂</span>を<span class="blank">水酸化ナトリウム</span>とともに加熱。これに水を加えて加熱したものを<span class="blank">水ガラス</span>という。</p>
-</div>
-
-<div class="footer-spacer"></div>
-<button class="btn-all" onclick="toggleAll()">すべての答えを切り替え</button>
 
 <script>
-    document.querySelectorAll('.blank').forEach(el => {
-        el.onclick = () => el.classList.toggle('show');
+    // 初期読み込み
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedData = JSON.parse(localStorage.getItem('wrongAnswers') || '[]');
+        savedData.forEach(qid => {
+            const el = document.querySelector(`[data-qid="${qid}"]`);
+            if (el) el.classList.add('wrong');
+        });
     });
+
+    // 穴埋めクリック
+    document.querySelectorAll('.blank').forEach(el => {
+        el.onclick = (e) => {
+            e.stopPropagation();
+            el.classList.toggle('show');
+        };
+    });
+
+    // 苦手保存ボタン
+    document.querySelectorAll('.save-btn').forEach(btn => {
+        btn.onclick = () => {
+            const wrapper = btn.closest('.q-wrapper');
+            const qid = wrapper.dataset.qid;
+            let savedData = JSON.parse(localStorage.getItem('wrongAnswers') || '[]');
+
+            if (wrapper.classList.contains('wrong')) {
+                wrapper.classList.remove('wrong');
+                savedData = savedData.filter(id => id !== qid);
+            } else {
+                wrapper.classList.add('wrong');
+                savedData.push(qid);
+            }
+            localStorage.setItem('wrongAnswers', JSON.stringify(savedData));
+        };
+    });
+
     function toggleAll() {
         const blanks = document.querySelectorAll('.blank');
         const anyHidden = Array.from(blanks).some(b => !b.classList.contains('show'));
         blanks.forEach(b => anyHidden ? b.classList.add('show') : b.classList.remove('show'));
+    }
+
+    function filterWrong() {
+        document.querySelectorAll('.q-wrapper').forEach(q => {
+            if (!q.classList.contains('wrong')) {
+                q.style.display = 'none';
+            }
+        });
+        checkEmptySections();
+    }
+
+    function showAll() {
+        document.querySelectorAll('.q-wrapper').forEach(q => q.style.display = 'block');
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('hidden-section'));
+    }
+
+    function checkEmptySections() {
+        document.querySelectorAll('.section').forEach(sec => {
+            const visibleQ = Array.from(sec.querySelectorAll('.q-wrapper')).some(q => q.style.display !== 'none');
+            if (!visibleQ) sec.classList.add('hidden-section');
+        });
+    }
+
+    function resetData() {
+        if (confirm('学習記録をすべて消去しますか？')) {
+            localStorage.removeItem('wrongAnswers');
+            location.reload();
+        }
     }
 </script>
 </body>
