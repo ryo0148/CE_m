@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>化学 穴埋めマスター</title>
+    <style>
+        :root { --primary: #2c3e50; --accent: #e74c3c; --bg: #f9f9f9; }
+        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: var(--bg); }
+        h1 { text-align: center; color: var(--primary); border-bottom: 3px solid var(--primary); padding-bottom: 10px; }
+        .section { background: white; padding: 25px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h2 { color: white; background: var(--primary); padding: 8px 15px; border-radius: 5px; font-size: 1.2em; }
+        .blank { display: inline-block; min-width: 60px; padding: 0 8px; margin: 0 2px; border-bottom: 2px solid var(--accent); cursor: pointer; color: transparent; background-color: #fff5f5; transition: all 0.2s; font-weight: bold; border-radius: 3px; text-align: center; }
+        .blank:hover { background-color: #ffe0e0; }
+        .blank.show { color: var(--accent); background-color: transparent; border-bottom: 2px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        th { background: #eee; }
+        .note { font-size: 0.85em; color: #666; background: #fffde7; padding: 10px; border-left: 4px solid #fbc02d; margin: 10px 0; }
+        .btn-all { display: block; width: 200px; margin: 20px auto; padding: 10px; background: var(--primary); color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>化学：非金属元素とその化合物</h1>
+<button class="btn-all" onclick="toggleAll()">すべての答えを表示/隠す</button>
+
+<div class="section">
+    <h2>1. 水素(H₂)と化合物</h2>
+    <p>水素は全気体中で最も<span class="blank">軽い</span>。金属に<span class="blank">薄い酸</span>を加えて作り、高温では酸化物から酸素を奪う<span class="blank">還元</span>作用を示す。15〜17族とは<span class="blank">共有結合</span>で分子を作る。</p>
+</div>
+
+<div class="section">
+    <h2>2. 貴ガス</h2>
+    <p>周期表の<span class="blank">18</span>族。価電子は<span class="blank">0</span>で極めて安定。他の原子とほとんど<span class="blank">化合物</span>を作らない。</p>
+</div>
+
+<div class="section">
+    <h2>3. 酸素(O₂)・オゾン(O₃)と酸化物</h2>
+    <p>酸素は<span class="blank">酸化マンガン(IV)</span>を触媒に過酸化水素を分解して得る。オゾンは酸素の<span class="blank">同素体</span>で色は<span class="blank">淡青色</span>。強い<span class="blank">酸化作用</span>をもち、<span class="blank">ヨウ化カリウムデンプン紙</span>を<span class="blank">青紫色</span>に変える。</p>
+    <table>
+        <tr><th>名称</th><th>定義</th><th>例</th></tr>
+        <tr><td><span class="blank">酸性酸化物</span></td><td>非金属の酸化物。水と反応して酸、塩基と反応して塩。</td><td>CO₂, SO₂</td></tr>
+        <tr><td><span class="blank">塩基性酸化物</span></td><td>金属の酸化物。水と反応して塩基、酸と反応して塩。</td><td>CaO, Na₂O</td></tr>
+        <tr><td><span class="blank">両性酸化物</span></td><td>水に不溶。酸とも<span class="blank">強塩基</span>とも反応して塩。</td><td>Al₂O₃, ZnO</td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>4. ハロゲン(F, Cl, Br, I)</h2>
+    <p>単体はいずれも<span class="blank">二原子</span>分子。酸化力の強さは <span class="blank">F₂</span> ＞ <span class="blank">Cl₂</span> ＞ <span class="blank">Br₂</span> ＞ <span class="blank">I₂</span>。塩素は水に溶けると<span class="blank">塩化水素</span>と<span class="blank">次亜塩素酸</span>を生じる。ヨウ素は<span class="blank">昇華</span>性をもつ。</p>
+    <div class="note">ハロゲン化水素の酸の強さ：<span class="blank">HI</span> ＞ <span class="blank">HBr</span> ＞ <span class="blank">HCl</span> ≫ <span class="blank">HF</span> (これのみ弱酸)</div>
+</div>
+
+<div class="section">
+    <h2>5. 硫黄(S)とその化合物</h2>
+    <p>同素体：<span class="blank">斜方硫黄</span>、<span class="blank">単斜硫黄</span>、<span class="blank">ゴム状硫黄</span>。硫化水素(H₂S)は<span class="blank">腐卵臭</span>。濃硫酸は<span class="blank">不揮発性</span>で吸湿・脱水作用をもつが、<span class="blank">熱濃硫酸</span>になると強い酸化作用を示す。</p>
+</div>
+
+<div class="section">
+    <h2>6. 窒素・リン</h2>
+    <p>アンモニアは<span class="blank">ハーバー・ボッシュ</span>法で工業的製法。NOは無色で<span class="blank">水上</span>置換、NO₂は赤褐色で<span class="blank">下方</span>置換で捕集。硝酸は<span class="blank">オストワルト</span>法で作る。</p>
+</div>
+
+<div class="section">
+    <h2>7. 炭素・ケイ素</h2>
+    <p>COは水に<span class="blank">不溶</span>だが、CO₂は<span class="blank">石灰水</span>を白濁させる。二酸化ケイ素(SiO₂)は<span class="blank">共有結合の結晶</span>で、立体網目構造をもつ。ケイ酸ナトリウムを加熱溶解したものは<span class="blank">水ガラス</span>と呼ばれる。</p>
+</div>
+
+<script>
+    document.querySelectorAll('.blank').forEach(el => {
+        el.onclick = () => el.classList.toggle('show');
+    });
+    function toggleAll() {
+        const blanks = document.querySelectorAll('.blank');
+        const isAnyHidden = Array.from(blanks).some(b => !b.classList.contains('show'));
+        blanks.forEach(b => isAnyHidden ? b.classList.add('show') : b.classList.remove('show'));
+    }
+</script>
+</body>
+</html>
